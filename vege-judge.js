@@ -1,8 +1,3 @@
-const judgeVegetable = function (vegetables, metric){
-  for (let x = )
-}
-
-
 const vegetables = [
   {
     submitter: 'Old Man Franklin',
@@ -21,7 +16,19 @@ const vegetables = [
   }
 ]
 
-const metric = 'redness'
+const metric = 'plumpness'
 
-console.log(vegetables[0].redness)
+const judgeVegetable = function (vegetables, metric){
+  let highest = 0
+  let position = 0
+  for (let x = 0; x < vegetables.length; x++){
+    if (vegetables[x][metric] > highest){
+      highest = vegetables[x][metric]
+      position = x
+    }
+    
+  }
+  return vegetables[position].submitter
+}
+
 console.log(judgeVegetable(vegetables, metric))
